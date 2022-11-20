@@ -33,11 +33,12 @@
 # (human vs AI) or a multiplayer (human vs human) game.
 
 #######################################################################################################################################################
+from game import Game
 
-class Account:
+game = Game()
 
-    def __init__(self) -> None:
-        pass
+game.display_title()
+game.display_rules()
 
-    print("Your awesome.")
+
 
