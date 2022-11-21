@@ -37,10 +37,7 @@ from game import Game
 
 game = Game()
 
-game.display_title()
-game.display_instructions()
-game.display_rules()
-game.numbers_of_players()
+game.run_game()
 
 
 

@@ -1,12 +1,14 @@
 import time
 from player import Player
+from ai import Ai
+from human import Human
 
-player = Player()
+
 
 class Game:
 
     def __init__(self) -> None:
-        self.choice = player
+        pass
 
     def display_title(self):
         print()
@@ -20,9 +22,7 @@ class Game:
     def display_rules(self):
         print("Use the numnber keys to enter your selection.")
         print("Winner will be best of three. ")
-        print()
-        
-        
+        print()   
         
     def display_instructions(self):
         print()
@@ -52,12 +52,56 @@ class Game:
         print()
         print()
 
-    def numbers_of_players(self):
+    def multiplayer_option(self):
         print("How many players?\n1. Player vs Ai,\n2 Human vs Human,\n3 Ai vs Ai?")
-        player.multiplayer_option()
+        print()
+        option = input("What is your choice? ")
+        if option == "1":
+            print("Player vs Ai")
+            print()
+            print("Starting ...")
+            print()
+            human_player_1 = Human("Player 1")
+            ai_player_1 = Ai("Ai")
+            player = Player()
+            
+
+        elif option == "2":
+            print("Player vs Player")
+            print()
+            print("Starting ...")
+            print()
+            human_player_1 = Human("Player 1")
+            human_player_2 = Human("Player 2")
+            player = Player()
+            
+
+        elif option == "3":
+            print("Ai vs Ai")
+            print()
+            print("Starting ...")
+            print()
+            ai_player_1 = Ai("Ai 1")
+            ai_player_2 = Ai("Ai 2")
+            player = Player()
+            
+
+        else:
+            print("Try again.")
+            print()
+            self.multiplayer_option()
 
     def run_game(self):
-        pass
+        cont = True
+        self.display_title()
+        self.display_instructions()
+        self.display_rules()
+        self.multiplayer_option()
+        
+        while cont != False:
+            pass
+
+
 
     def winner(self):
         pass

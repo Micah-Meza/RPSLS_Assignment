@@ -1,40 +1,37 @@
-from human import Human
-from ai import Ai
+
+
 
 class Player:
 
-    def __init__(self):
-        self.name = "Blue"
-        
+    def __init__(self, name):
+        self.name = name
+        self.score = self.scores()
+        self.gesture = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
-    def gesture(self):
-        pass
-
-    def score(self):
-        pass
-
-    def multiplayer_option(self):
-        print()
-        option = input("What is your choice? ")
-        if option == "1":
-            print("Player vs Ai")
-            print()
-            human_player_1 = Human("Player 1")
-            ai_player_1 = Ai("Ai")
-        elif option == "2":
-            print("Player vs Player")
-            print()
-            human_player_1 = Human("Player 1")
-            human_player_2 = Human("Player 2")
-        elif option == "3":
-            print("Ai vs Ai")
-            print()
-            ai_player_1 = Ai("Ai 1")
-            ai_player_2 = Ai("Ai 2")
-
+    def gesture_pick(self, selection):
+        selection = input("What is your choice? ")
+        if selection == "1":
+            print(f"{self.name} picked {self.gesture[0]}!")
+        elif selection == "2":
+            print(f"{self.name} picked {self.gesture[1]}!")
+        elif selection == "3":
+            print(f"{self.name} picked {self.gesture[2]}!")
+        elif selection == "4":
+            print(f"{self.name} picked {self.gesture[3]}!")
+        elif selection == "5":
+            print(f"{self.name} picked {self.gesture[4]}!")
         else:
             print("Try again.")
-            print()
-            self.multiplayer_option()
+            self.gesture(selection = selection)
+
+    def scores(self):
+        pass
+
+    def show_list(self):
+        for i in self.gesture:
+            print(i)
 
 
+  
+
+    

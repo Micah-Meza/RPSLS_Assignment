@@ -1,6 +1,9 @@
-# from player import Player
+from player import Player
 
-class Ai:
+class Ai(Player):
 
     def __init__(self, name):
-        self.name = name
+        super().__init__(name)
+        
+    def scores(self):
+        pass
