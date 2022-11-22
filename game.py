@@ -8,7 +8,8 @@ from human import Human
 class Game:
 
     def __init__(self) -> None:
-        pass
+        self.player_1 = Human("")
+        self.player_2 = Human("")
 
     def display_title(self):
         print()
@@ -61,9 +62,9 @@ class Game:
             print()
             print("Starting ...")
             print()
-            human_player_1 = Human("Player 1")
-            ai_player_1 = Ai("Ai")
-            player = Player()
+            self.player_1 = Human("Player 1")
+            self.player_2 = Ai("Ai")
+            
             
 
         elif option == "2":
@@ -71,9 +72,9 @@ class Game:
             print()
             print("Starting ...")
             print()
-            human_player_1 = Human("Player 1")
-            human_player_2 = Human("Player 2")
-            player = Player()
+            self.player_1 = Human("Player 1")
+            self.player_2 = Human("Player 2")
+            
             
 
         elif option == "3":
@@ -81,9 +82,9 @@ class Game:
             print()
             print("Starting ...")
             print()
-            ai_player_1 = Ai("Ai 1")
-            ai_player_2 = Ai("Ai 2")
-            player = Player()
+            self.player_1 = Ai("Ai 1")
+            self.player_2 = Ai("Ai 2")
+            
             
 
         else:
@@ -97,10 +98,15 @@ class Game:
         self.display_instructions()
         self.display_rules()
         self.multiplayer_option()
+        self.round()
         
         while cont != False:
             pass
 
+
+    def round(self):
+        print(self.player_1.name)
+        print(self.player_2.name)
 
 
     def winner(self):

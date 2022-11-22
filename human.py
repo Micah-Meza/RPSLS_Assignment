@@ -8,7 +8,9 @@ class Human(Player):
         # self.name = name
         
         
-    def gesture_pick(self, selection):
+    def gesture_pick(self):
+        selection = input("Enter your choice. ")
+
         if selection == "1":
             print(f"{self.name} picked {self.gesture[0]}!")
         elif selection == "2":
@@ -28,4 +30,6 @@ class Human(Player):
             print(i)
 
     def scores(self):
+        score = 0
+        score += 1
         pass
