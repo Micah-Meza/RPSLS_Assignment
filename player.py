@@ -9,7 +9,7 @@ class Player:
         self.gesture = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         self.player_choice = ""
 
-    def gesture_pick(self, selection):
+    # def gesture_pick(self, selection):
     #     selection = input("What is your choice? ")
     #     if selection == "1":
     #         print(f"{self.name} picked {self.gesture[0]}!")

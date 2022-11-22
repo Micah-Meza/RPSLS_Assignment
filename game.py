@@ -54,7 +54,7 @@ class Game:
         print()
 
     def multiplayer_option(self):
-        print("How many players?\n1. Player vs Ai,\n2 Human vs Human,\n3 Ai vs Ai?")
+        print("How many players?\n1. Player vs Ai\n2. Human vs Human\n3. Ai vs Ai ")
         print()
         option = input("What is your choice? ")
         if option == "1":
@@ -74,7 +74,7 @@ class Game:
             print()
             self.player_1 = Human("Player 1")
             self.player_2 = Human("Player 2")
-            
+            return option
             
 
         elif option == "3":
@@ -97,20 +97,35 @@ class Game:
         self.display_title()
         self.display_instructions()
         self.display_rules()
-        self.multiplayer_option()
-        self.round()
+        option = self.multiplayer_option()
+        if option == "2":
+            self.alt_round()
+        else:
+            self.round()
         
-        while cont != False:
-            pass
+        # while cont != False:
+        #     pass
 
 
     def round(self):
-        print(self.player_1.name)
-        print(self.player_2.name)
+        # while 
+        self.player_1.gesture_pick()
+        self.player_2.gesture_pick()
+
+
+    def alt_round(self):
+        self.player_1.gesture_pick_2()
+        self.player_2.gesture_pick_2()
+        self.winner()
 
 
     def winner(self):
-        pass
+        if self.player_1.player_choice[0] == self.player_2.player_choice[0]:
+            print("It's a tie. Go again! ")
+        elif self.player_1.player_choice[0] and self.player_2.player_choice[1]:
+            print(f"{self.player_1.name} wins! ")
+        else:
+            print(f"{self.player_2.name} wins! ")
 
 
 
