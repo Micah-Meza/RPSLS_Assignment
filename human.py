@@ -38,6 +38,7 @@ class Human(Player):
         self.show_list()
         print()
         selection = maskpass.askpass(f"{self.name} make your choice: ") # To mask the player input on player vs player.
+        # selection = input("Enter your choice. ") # incase if the maskpass import does work.
         print()
 
         if selection == "0":
